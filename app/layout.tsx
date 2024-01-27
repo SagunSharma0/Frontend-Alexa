@@ -6,8 +6,8 @@ import './globals.css'
 const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Store',
-  description: 'Store',
+  title: 'Alexa',
+  description: 'Alexa - Store',
 }
 
 export default function RootLayout({
@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        {children}
       </body>
     </html>
   )
