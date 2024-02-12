@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { MouseEventHandler } from "react";
-import { Expand, ShoppingCart } from "lucide-react";
+import { Expand, ShoppingCart, ClipboardCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 import Currency  from "@/components/ui/currency";
@@ -10,6 +10,7 @@ import IconButton  from "@/components/ui/icon-button";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
 import { Product } from "@/types";
+import useWishlist from "@/hooks/use-wishlist";
 
 interface ProductCard {
   data: Product
@@ -20,6 +21,7 @@ const ProductCard: React.FC<ProductCard> = ({
 }) => {
   const previewModal = usePreviewModal();
   const cart = useCart();
+  const Wishlist = useWishlist();
   const router = useRouter();
 
   const handleClick = () => {
@@ -36,6 +38,12 @@ const ProductCard: React.FC<ProductCard> = ({
     event.stopPropagation();
 
     cart.addItem(data);
+  };
+
+  const onAddToWishlist: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+
+    Wishlist.addItem(data);
   };
   
   return ( 
@@ -57,6 +65,10 @@ const ProductCard: React.FC<ProductCard> = ({
             <IconButton
               onClick={onAddToCart} 
               icon={<ShoppingCart size={20} className="text-gray-600" />} 
+            />
+            <IconButton
+              onClick={onAddToWishlist} 
+              icon={<ClipboardCheck size={20} className="text-gray-600" />} 
             />
           </div>
         </div>

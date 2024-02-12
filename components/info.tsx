@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, ClipboardCheck } from "lucide-react";
 
 import Currency  from "@/components/ui/currency";
 import Button from "@/components/ui/button";
@@ -15,6 +15,9 @@ const Info: React.FC<InfoProps> = ({ data }) => {
   const cart = useCart();
 
   const onAddToCart = () => {
+    cart.addItem(data);
+  }
+  const onAddToWishlist = () => {
     cart.addItem(data);
   }
 
@@ -43,6 +46,12 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         <Button onClick={onAddToCart} className="flex items-center gap-x-2">
           Add To Cart
           <ShoppingCart size={20} />
+        </Button>
+      </div>
+      <div className="mt-10 flex items-center gap-x-3">
+        <Button onClick={onAddToWishlist} className="flex items-center gap-x-2">
+          Add To Wishlist
+          <ClipboardCheck size={20} />
         </Button>
       </div>
     </div>
