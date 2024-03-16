@@ -11,7 +11,7 @@ const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Alexa Store',
-  description: '"ChicThread: Style Defined".',
+  description: 'ChicThread: Style Defined.',
 }
 
 export default function RootLayout({

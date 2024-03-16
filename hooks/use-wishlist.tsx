@@ -31,7 +31,7 @@ const useWishlist = create(
   },
   removeAll: () => set({ items: [] }),
 }), {
-  name: 'Wishlist-storage',
+  name: 'wishlist-storage',
   storage: createJSONStorage(() => localStorage)
 }));
 

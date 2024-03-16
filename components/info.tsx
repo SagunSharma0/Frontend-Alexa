@@ -6,6 +6,7 @@ import Currency  from "@/components/ui/currency";
 import Button from "@/components/ui/button";
 import { Product } from "@/types";
 import useCart from "@/hooks/use-cart";
+import useWishlist from "@/hooks/use-wishlist";
 
 interface InfoProps {
   data: Product
@@ -13,12 +14,13 @@ interface InfoProps {
 
 const Info: React.FC<InfoProps> = ({ data }) => {
   const cart = useCart();
+  const wishlist = useWishlist();
 
   const onAddToCart = () => {
     cart.addItem(data);
   }
   const onAddToWishlist = () => {
-    cart.addItem(data);
+    wishlist.addItem(data);
   }
 
   return ( 

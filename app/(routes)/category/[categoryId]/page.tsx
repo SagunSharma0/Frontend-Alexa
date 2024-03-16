@@ -1,6 +1,6 @@
 
 import Container from '@/components/ui/container';
-
+import Billboard from '@/components/ui/billboard';
 import ProductCard from '@/components/ui/product-card';
 import NoResults from '@/components/ui/no-results';
 
@@ -11,7 +11,6 @@ import getColors from '@/actions/get-colors';
 
 import Filter from './components/filter';
 import MobileFilters from './components/mobile-filters';
-import Billboard from '@/components/billboard';
 
 export const revalidate = 0;
 

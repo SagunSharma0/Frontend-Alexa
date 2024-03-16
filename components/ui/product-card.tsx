@@ -68,7 +68,7 @@ const ProductCard: React.FC<ProductCard> = ({
             />
             <IconButton
               onClick={onAddToWishlist} 
-              icon={<ClipboardCheck size={20} className="text-gray-600" />} 
+              icon={<ClipboardCheck size={10} className="text-gray-600" />} 
             />
           </div>
         </div>

@@ -17,7 +17,7 @@ const NavbarActions = () => {
 
   const router = useRouter();
   const cart = useCart();
-  const Wishlist = useWishlist();
+  const wishlist = useWishlist();
 
   if (!isMounted) {
     return null;
@@ -31,7 +31,7 @@ const NavbarActions = () => {
           color="white"
         />
         <span className="ml-2 text-sm font-medium text-white">
-          {Wishlist.items.length}
+          {wishlist.items.length}
         </span>
       </Button>
       <Button onClick={() => router.push('/cart')} className="flex items-center rounded-full bg-black px-4 py-2">
